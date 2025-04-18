@@ -5,7 +5,7 @@ import seaborn as sns
 
 
 def main():
-    st.title("This is an app for ecomm")
+    st.title("This is an app for Exploratory Data Anaylsis")
     st.sidebar.title("You can upload your file here")
 
     upload_file= st.sidebar.file_uploader("Upload your file",type=['csv','xlsx'])
@@ -25,6 +25,7 @@ def main():
             st.write("Shape of the data is:", df.shape)
             st.write("The column names in the data are:", df.columns)
             st.write("The missing values in the data are:", df.isnull().sum())
+            st.write("The duplicated values in the data are:",df.duplicated().sum())
             
             st.subheader("Please find the statistical details below")
             st.write("The statistical analysis of data is:",df.describe())
